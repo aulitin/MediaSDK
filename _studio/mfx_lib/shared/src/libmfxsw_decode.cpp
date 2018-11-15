@@ -204,11 +204,7 @@ mfxStatus MFXVideoDECODE_Query(mfxSession session, mfxVideoParam *in, mfxVideoPa
 
 #if defined(MFX_ENABLE_VP8_VIDEO_DECODE_HW)
         case MFX_CODEC_VP8:
-#if defined (MFX_ENABLE_VP8_VIDEO_DECODE_HW)
             mfxRes = VideoDECODEVP8_HW::Query(session->m_pCORE.get(), in, out);
-#else
-            mfxRes = VideoDECODEVP8::Query(session->m_pCORE.get(), in, out);
-#endif // MFX_VA && MFX_ENABLE_VP8_VIDEO_DECODE_HW
             break;
 #endif
 

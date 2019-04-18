@@ -2867,7 +2867,6 @@ mfxStatus ImplementationAvc::AsyncRoutine(mfxBitstream * bs)
                     mfxU32 removalDelay = hrd.GetInitCpbRemovalDelay();
                     mfxU32 delayOffset = hrd.GetInitCpbRemovalDelayOffset();
 
-                    m_brc.GetQp(task->m_brcFrameParams, task->m_brcFrameCtrl); // to update hrd params
                     GetHRDParamFromBRC(*task, removalDelay, delayOffset);
 
                     if (task->m_initCpbRemoval != removalDelay ||
